@@ -1,0 +1,13 @@
+export function FileTextIcon({ size = 32 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 16 16" fill="currentColor">
+      <rect x="2" y="1" width="10" height="14" fill="none" stroke="currentColor" strokeWidth="1" />
+      <rect x="12" y="1" width="2" height="2" fill="currentColor" opacity="0.5" />
+      <rect x="4" y="4" width="6" height="1" />
+      <rect x="4" y="6" width="8" height="1" />
+      <rect x="4" y="8" width="5" height="1" />
+      <rect x="4" y="10" width="7" height="1" />
+      <rect x="4" y="12" width="4" height="1" />
+    </svg>
+  )
+}
