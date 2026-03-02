@@ -14,7 +14,9 @@
 }
 
 /* Base */
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -25,20 +27,40 @@ html, body, #root {
 }
 
 /* Custom pixelated cursor */
-*, *::before, *::after {
-  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath d='M0 0h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1H7v1H3v1H0zM4 11h3v1h1v3h-1v-1h-1v-1h-1v-1h-1zM0 12h2v1h-1v1h-1z' fill='%2333ff33'/%3E%3C/svg%3E") 0 0, auto;
+*,
+*::before,
+*::after {
+  cursor:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath d='M0 0h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1H7v1H3v1H0zM4 11h3v1h1v3h-1v-1h-1v-1h-1v-1h-1zM0 12h2v1h-1v1h-1z' fill='%2333ff33'/%3E%3C/svg%3E")
+      0 0,
+    auto;
 }
 
-button, a, [role="button"] {
-  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath d='M6 0h2v16H6zM8 4h2v12h-2zM10 4h2v8h-2zM4 8h2v6H4zM2 6h2v4H2z' fill='%2333ff33'/%3E%3C/svg%3E") 6 0, pointer;
+button,
+button *,
+a,
+a *,
+[role="button"],
+[role="button"] * {
+  cursor:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath d='M6 0h2v16H6zM8 4h2v12h-2zM10 4h2v8h-2zM4 8h2v6H4zM2 6h2v4H2z' fill='%2333ff33'/%3E%3C/svg%3E")
+      6 0,
+    pointer;
 }
 
 /* CRT scanlines + RGB sub-pixels (aleclownes.com technique) */
 .crt-scanlines {
   background:
-    linear-gradient(rgba(18,16,16,0) 50%, rgba(0,0,0,0.25) 50%),
-    linear-gradient(90deg, rgba(255,0,0,0.06), rgba(0,255,0,0.02), rgba(0,0,255,0.06));
-  background-size: 100% 2px, 3px 100%;
+    linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+    linear-gradient(
+      90deg,
+      rgba(255, 0, 0, 0.06),
+      rgba(0, 255, 0, 0.02),
+      rgba(0, 0, 255, 0.06)
+    );
+  background-size:
+    100% 2px,
+    3px 100%;
 }
 
 /* CRT vignette — soft edge darkening */
@@ -53,76 +75,170 @@ button, a, [role="button"] {
 
 /* CRT content flicker — brightness dips on content, not screen overlay */
 @keyframes content-flicker {
-  0%, 100%  { filter: brightness(1); }
-  4%        { filter: brightness(0.7); }
-  5%        { filter: brightness(1); }
-  70%       { filter: brightness(1); }
-  71%       { filter: brightness(0.72); }
-  72%       { filter: brightness(1); }
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+  4% {
+    filter: brightness(0.7);
+  }
+  5% {
+    filter: brightness(1);
+  }
+  70% {
+    filter: brightness(1);
+  }
+  71% {
+    filter: brightness(0.72);
+  }
+  72% {
+    filter: brightness(1);
+  }
 }
 
 /* Screen-wide horizontal glitch — skew + translateX jitter */
 .crt-skew {
-  animation: skew 18s infinite linear, content-flicker 22s infinite;
+  animation:
+    skew 18s infinite linear,
+    content-flicker 22s infinite;
 }
 
 @keyframes skew {
   /* 8s of jitter + bursts, then 10s rest */
-  0%       { transform: translateX(0); }
-  0.9%     { transform: translateX(2px); }
-  1.8%     { transform: translateX(-2px); }
-  2.7%     { transform: translateX(1.5px); }
-  3.6%     { transform: translateX(-1px); }
-  4.4%     { transform: translateX(2px); }
+  0% {
+    transform: translateX(0);
+  }
+  0.9% {
+    transform: translateX(2px);
+  }
+  1.8% {
+    transform: translateX(-2px);
+  }
+  2.7% {
+    transform: translateX(1.5px);
+  }
+  3.6% {
+    transform: translateX(-1px);
+  }
+  4.4% {
+    transform: translateX(2px);
+  }
   /* burst 1 */
-  5.3%     { transform: skewX(-1.2deg) translateX(-7px); }
-  5.6%     { transform: skewX(1deg) translateX(8px); }
-  5.8%     { transform: skewX(-0.5deg) translateX(-4px); }
-  6.2%     { transform: translateX(1.5px); }
-  7.1%     { transform: translateX(-2px); }
-  8%       { transform: translateX(1.5px); }
-  8.9%     { transform: translateX(-1px); }
-  9.8%     { transform: translateX(2px); }
-  10.7%    { transform: translateX(0); }
-  11.6%    { transform: translateX(-2px); }
-  12.4%    { transform: translateX(1.5px); }
-  13.3%    { transform: translateX(-1px); }
+  5.3% {
+    transform: skewX(-1.2deg) translateX(-7px);
+  }
+  5.6% {
+    transform: skewX(1deg) translateX(8px);
+  }
+  5.8% {
+    transform: skewX(-0.5deg) translateX(-4px);
+  }
+  6.2% {
+    transform: translateX(1.5px);
+  }
+  7.1% {
+    transform: translateX(-2px);
+  }
+  8% {
+    transform: translateX(1.5px);
+  }
+  8.9% {
+    transform: translateX(-1px);
+  }
+  9.8% {
+    transform: translateX(2px);
+  }
+  10.7% {
+    transform: translateX(0);
+  }
+  11.6% {
+    transform: translateX(-2px);
+  }
+  12.4% {
+    transform: translateX(1.5px);
+  }
+  13.3% {
+    transform: translateX(-1px);
+  }
   /* rest — 10s of calm */
-  45%, 100% { transform: translateX(0); }
+  45%,
+  100% {
+    transform: translateX(0);
+  }
 }
 
 /* Chromatic aberration glitch — intensified RGB columns that shift during wave stutter */
 .crt-glitch {
-  background:
-    linear-gradient(90deg,
-      rgba(255,0,0,0.14),
-      rgba(0,255,0,0.06),
-      rgba(0,0,255,0.14)
-    );
+  background: linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.14),
+    rgba(0, 255, 0, 0.06),
+    rgba(0, 0, 255, 0.14)
+  );
   background-size: 3px 100%;
   animation: chromatic-glitch 18s infinite linear;
   opacity: 0.15;
 }
 
 @keyframes chromatic-glitch {
-  0%, 4.9%, 6.7%, 13.8%, 16%, 24.9%, 26.7%, 100% {
+  0%,
+  4.9%,
+  6.7%,
+  13.8%,
+  16%,
+  24.9%,
+  26.7%,
+  100% {
     opacity: 0.15;
     transform: translateX(0);
   }
   /* first burst — red/cyan split */
-  5.3%  { opacity: 1;   transform: translateX(-3px); }
-  5.6%  { opacity: 1;   transform: translateX(5px); }
-  5.8%  { opacity: 0.8; transform: translateX(-2px); }
-  6.2%  { opacity: 0.15; transform: translateX(0); }
+  5.3% {
+    opacity: 1;
+    transform: translateX(-3px);
+  }
+  5.6% {
+    opacity: 1;
+    transform: translateX(5px);
+  }
+  5.8% {
+    opacity: 0.8;
+    transform: translateX(-2px);
+  }
+  6.2% {
+    opacity: 0.15;
+    transform: translateX(0);
+  }
   /* second burst */
-  14.2% { opacity: 1;   transform: translateX(6px); }
-  14.7% { opacity: 1;   transform: translateX(-4px); }
-  15.1% { opacity: 0.6; transform: translateX(2px); }
-  15.6% { opacity: 0.15; transform: translateX(0); }
+  14.2% {
+    opacity: 1;
+    transform: translateX(6px);
+  }
+  14.7% {
+    opacity: 1;
+    transform: translateX(-4px);
+  }
+  15.1% {
+    opacity: 0.6;
+    transform: translateX(2px);
+  }
+  15.6% {
+    opacity: 0.15;
+    transform: translateX(0);
+  }
   /* third burst */
-  25.3% { opacity: 1;   transform: translateX(-4px); }
-  25.8% { opacity: 0.8; transform: translateX(3px); }
-  26.2% { opacity: 0.15; transform: translateX(0); }
+  25.3% {
+    opacity: 1;
+    transform: translateX(-4px);
+  }
+  25.8% {
+    opacity: 0.8;
+    transform: translateX(3px);
+  }
+  26.2% {
+    opacity: 0.15;
+    transform: translateX(0);
+  }
 }
 
 /* CRT tearing — fullscreen displacement via SVG filter, flickers with glitch bursts */
@@ -137,21 +253,47 @@ button, a, [role="button"] {
 
 @keyframes tear-flicker {
   /* synced with skew/chromatic burst windows */
-  0%, 4.9%   { opacity: 0; }
-  5.3%       { opacity: 1; }
-  5.8%       { opacity: 0.7; }
-  6.2%, 13.8%  { opacity: 0; }
-  14.2%      { opacity: 1; }
-  14.7%      { opacity: 0.8; }
-  15.1%, 24.9%  { opacity: 0; }
-  25.3%      { opacity: 1; }
-  25.8%      { opacity: 0.6; }
-  26.2%, 100% { opacity: 0; }
+  0%,
+  4.9% {
+    opacity: 0;
+  }
+  5.3% {
+    opacity: 1;
+  }
+  5.8% {
+    opacity: 0.7;
+  }
+  6.2%,
+  13.8% {
+    opacity: 0;
+  }
+  14.2% {
+    opacity: 1;
+  }
+  14.7% {
+    opacity: 0.8;
+  }
+  15.1%,
+  24.9% {
+    opacity: 0;
+  }
+  25.3% {
+    opacity: 1;
+  }
+  25.8% {
+    opacity: 0.6;
+  }
+  26.2%,
+  100% {
+    opacity: 0;
+  }
 }
 
 /* CRT glow on text */
 .crt-glow {
-  text-shadow: 0 0 4px currentColor, 0 0 8px currentColor;
+  text-shadow:
+    0 0 4px currentColor,
+    0 0 8px currentColor;
 }
 
 /* Chromatic aberration */
@@ -191,21 +333,69 @@ button, a, [role="button"] {
 
 /* Window open — staggered retro expansion */
 @keyframes window-open {
-  0%   { transform: scaleX(0.3) scaleY(0.01); opacity: 0.8; filter: brightness(2); }
-  20%  { transform: scaleX(0.5) scaleY(0.01); opacity: 0.9; filter: brightness(1.5); }
-  40%  { transform: scaleX(0.8) scaleY(0.3);  opacity: 0.95; filter: brightness(1.2); }
-  60%  { transform: scaleX(0.9) scaleY(0.6);  opacity: 1; filter: brightness(1.1); }
-  80%  { transform: scaleX(1) scaleY(0.85);   opacity: 1; filter: brightness(1); }
-  100% { transform: scaleX(1) scaleY(1);      opacity: 1; filter: brightness(1); }
+  0% {
+    transform: scaleX(0.3) scaleY(0.01);
+    opacity: 0.8;
+    filter: brightness(2);
+  }
+  20% {
+    transform: scaleX(0.5) scaleY(0.01);
+    opacity: 0.9;
+    filter: brightness(1.5);
+  }
+  40% {
+    transform: scaleX(0.8) scaleY(0.3);
+    opacity: 0.95;
+    filter: brightness(1.2);
+  }
+  60% {
+    transform: scaleX(0.9) scaleY(0.6);
+    opacity: 1;
+    filter: brightness(1.1);
+  }
+  80% {
+    transform: scaleX(1) scaleY(0.85);
+    opacity: 1;
+    filter: brightness(1);
+  }
+  100% {
+    transform: scaleX(1) scaleY(1);
+    opacity: 1;
+    filter: brightness(1);
+  }
 }
 
 @keyframes window-close {
-  0%   { transform: scaleX(1) scaleY(1);      opacity: 1; filter: brightness(1); }
-  20%  { transform: scaleX(1) scaleY(0.85);   opacity: 1; filter: brightness(1); }
-  40%  { transform: scaleX(0.9) scaleY(0.6);  opacity: 1; filter: brightness(1.1); }
-  60%  { transform: scaleX(0.8) scaleY(0.3);  opacity: 0.95; filter: brightness(1.2); }
-  80%  { transform: scaleX(0.5) scaleY(0.01); opacity: 0.9; filter: brightness(1.5); }
-  100% { transform: scaleX(0.3) scaleY(0.01); opacity: 0; filter: brightness(2); }
+  0% {
+    transform: scaleX(1) scaleY(1);
+    opacity: 1;
+    filter: brightness(1);
+  }
+  20% {
+    transform: scaleX(1) scaleY(0.85);
+    opacity: 1;
+    filter: brightness(1);
+  }
+  40% {
+    transform: scaleX(0.9) scaleY(0.6);
+    opacity: 1;
+    filter: brightness(1.1);
+  }
+  60% {
+    transform: scaleX(0.8) scaleY(0.3);
+    opacity: 0.95;
+    filter: brightness(1.2);
+  }
+  80% {
+    transform: scaleX(0.5) scaleY(0.01);
+    opacity: 0.9;
+    filter: brightness(1.5);
+  }
+  100% {
+    transform: scaleX(0.3) scaleY(0.01);
+    opacity: 0;
+    filter: brightness(2);
+  }
 }
 
 .window-open {
@@ -247,8 +437,13 @@ button, a, [role="button"] {
 
 /* Pixel glow pulse animation */
 @keyframes pixel-glow {
-  0%, 100% { filter: drop-shadow(0 0 4px currentColor); }
-  50% { filter: drop-shadow(0 0 10px currentColor); }
+  0%,
+  100% {
+    filter: drop-shadow(0 0 4px currentColor);
+  }
+  50% {
+    filter: drop-shadow(0 0 10px currentColor);
+  }
 }
 
 .pixel-glow-pulse {

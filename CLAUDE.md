@@ -27,7 +27,7 @@ src/
   hooks/                     # useClock, useOnlineStatus, useResize, useRetroDrag, useHashSync
   components/
     crt/CRTOverlay.tsx       # Scanlines + vignette + chromatic glitch
-    desktop/                 # Desktop.tsx, Wallpaper.tsx, DesktopIcon.tsx, DesktopIconGrid.tsx, StatusBar.tsx
+    desktop/                 # Desktop.tsx, Wallpaper.tsx, DesktopIcon.tsx, DesktopIconGrid.tsx, Taskbar.tsx
     window/                  # Window, WindowTitleBar, WindowControls, WindowContent, WindowManager
     renderers/               # MarkdownViewer, TextViewer, FileExplorer, LinkLauncher, PdfViewer
   icons/                     # Inline SVG pixel icons (16x16 viewBox, currentColor)
