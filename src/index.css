@@ -130,7 +130,6 @@ button, a, [role="button"] {
   position: absolute;
   inset: 0;
   backdrop-filter: url(#crt-tear);
-  -webkit-backdrop-filter: url(#crt-tear);
   animation: tear-flicker 18s infinite linear;
   pointer-events: none;
   opacity: 0;

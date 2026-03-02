@@ -22,7 +22,7 @@ export function CRTOverlay() {
             <feTurbulence
               ref={turbRef}
               type="fractalNoise"
-              baseFrequency="0.0001 0.2"
+              baseFrequency="0.00005 0.06"
               numOctaves="2"
               seed="42"
               result="noise"
@@ -30,7 +30,7 @@ export function CRTOverlay() {
             <feDisplacementMap
               in="SourceGraphic"
               in2="noise"
-              scale="10"
+              scale="25"
               xChannelSelector="R"
               yChannelSelector="G"
             />
