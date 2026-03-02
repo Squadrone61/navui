@@ -12,11 +12,6 @@ dist
 dist-ssr
 *.local
 
-# Test screenshots
-*.png
-*.jpg
-*.jpeg
-
 # Claude Code
 .claude/
 

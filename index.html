@@ -3,18 +3,109 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Safa Akyüz</title>
-    <meta name="description" content="Portfolio site disguised as a retro desktop OS" />
+
+    <!-- Primary Meta -->
+    <title>Safa Akyuz | Frontend Developer</title>
+    <meta name="description" content="Frontend developer with 5+ years of experience." />
+    <meta name="keywords" content="Safa Akyuz, frontend developer, React, Angular, TypeScript, portfolio, web developer" />
+    <meta name="author" content="Safa Akyuz" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="canonical" href="https://safaakyuz.com" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://safaakyuz.com" />
+    <meta property="og:title" content="Safa Akyuz | Frontend Developer" />
+    <meta property="og:description" content="Frontend developer with 5+ years of experience." />
+    <meta property="og:image" content="https://safaakyuz.com/og-image.png" />
+    <meta property="og:site_name" content="Safa Akyuz" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Safa Akyuz | Frontend Developer" />
+    <meta name="twitter:description" content="Frontend developer with 5+ years of experience." />
+    <meta name="twitter:image" content="https://safaakyuz.com/og-image.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Manifest -->
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Press+Start+2P&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect x='1' y='1' width='14' height='12' fill='none' stroke='%2333ff33' stroke-width='1'/><rect x='3' y='3' width='4' height='2' fill='%2333ff33'/></svg>" />
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Safa Akyuz",
+        "jobTitle": "Frontend Developer",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Etiya"
+        },
+        "knowsAbout": ["Angular", "React", "TypeScript", "JavaScript", "Node.js", "Tailwind CSS"],
+        "url": "https://safaakyuz.com",
+        "email": "safaakyuz@outlook.com.tr",
+        "sameAs": [
+          "https://github.com/Squadrone61",
+          "https://linkedin.com/in/safa-akyuz"
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Safa Akyuz",
+        "url": "https://safaakyuz.com",
+        "description": "Frontend developer portfolio presented as a retro CRT desktop interface."
+      }
+    </script>
+
+    <!-- Noscript fallback for crawlers -->
+    <noscript>
+      <div style="font-family: monospace; color: #33ff33; background: #0a0a0a; padding: 2rem; max-width: 800px; margin: 0 auto;">
+        <h1>Safa Akyuz — Frontend Developer</h1>
+        <p>Frontend developer with 5+ years of experience based in Turkey. Currently leading the frontend discipline at Etiya, mentoring developers and driving architectural decisions for enterprise Angular applications.</p>
+
+        <h2>Skills</h2>
+        <ul>
+          <li>Frontend: Angular, React, TypeScript, JavaScript, Tailwind CSS, Framer Motion</li>
+          <li>Backend: Node.js, Cloudflare Workers, Hono</li>
+          <li>Tools: Git, Vite, Figma, VS Code, Claude Code</li>
+        </ul>
+
+        <h2>Projects</h2>
+        <ul>
+          <li><a href="https://aidnd-web.safats61.workers.dev">AI DnD</a> — AI-powered Dungeons &amp; Dragons web app</li>
+          <li><a href="https://ozkonakelektrik.com.tr">Ozkonak Elektrik</a> — Business website for an electrical company</li>
+          <li><a href="https://zucraft.shop">Zu Craft</a> — E-commerce storefront for a handcraft shop</li>
+        </ul>
+
+        <h2>Contact</h2>
+        <ul>
+          <li>Email: safaakyuz@outlook.com.tr</li>
+          <li><a href="https://github.com/Squadrone61">GitHub</a></li>
+          <li><a href="https://linkedin.com/in/safa-akyuz">LinkedIn</a></li>
+          <li>Web: safaakyuz.com</li>
+        </ul>
+      </div>
+    </noscript>
   </body>
 </html>
