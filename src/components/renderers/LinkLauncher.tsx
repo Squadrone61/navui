@@ -16,7 +16,7 @@ export function LinkLauncher({ file }: LinkLauncherProps) {
   return (
     <div className="flex flex-col items-center justify-center h-full gap-6 p-6">
       <div className="text-crt-cyan">
-        <Icon name="globe" size={48} />
+        <Icon name={file.icon} size={48} />
       </div>
 
       <div className="text-center">

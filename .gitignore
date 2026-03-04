@@ -14,6 +14,7 @@ dist-ssr
 
 # Claude Code
 .claude/
+.playwright-mcp/
 
 # Editor directories and files
 .vscode/*
