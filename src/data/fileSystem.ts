@@ -67,7 +67,7 @@ export const fileSystem: Record<string, FileEntry> = {
     path: '/Projects/AI DnD',
     parentId: 'projects',
     icon: 'dnd',
-    url: 'https://aidnd-web.safats61.workers.dev',
+    url: 'https://aidnd.safaakyuz.com',
     description: 'AI-powered Dungeons & Dragons web app',
     defaultSize: { width: 480, height: 360 },
     showOnDesktop: true,
