@@ -28,7 +28,7 @@ export const fileSystem: Record<string, FileEntry> = {
     type: 'folder',
     path: '/Projects',
     icon: 'folder',
-    children: ['ai-dnd', 'ozkonak-elektrik', 'zu-craft', 'halaqat'],
+    children: ['unseen-servant', 'ozkonak-elektrik', 'zu-craft', 'halaqat'],
     defaultSize: { width: 550, height: 400 },
   },
   contact: {
@@ -60,14 +60,14 @@ export const fileSystem: Record<string, FileEntry> = {
     contentModule: () => import('../content/links.txt?raw'),
     defaultSize: { width: 480, height: 360 },
   },
-  'ai-dnd': {
-    id: 'ai-dnd',
-    name: 'AI DnD',
+  'unseen-servant': {
+    id: 'unseen-servant',
+    name: 'Unseen Servant',
     type: 'link',
-    path: '/Projects/AI DnD',
+    path: '/Projects/Unseen Servant',
     parentId: 'projects',
     icon: 'dnd',
-    url: 'https://aidnd.safaakyuz.com',
+    url: 'https://unseenservant.safaakyuz.com',
     description: 'AI-powered Dungeons & Dragons web app',
     defaultSize: { width: 480, height: 360 },
     showOnDesktop: true,

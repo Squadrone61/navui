@@ -24,7 +24,7 @@ I actively integrate AI-driven development into my workflow — Windsurf at work
 
 ## Side Projects
 
-- **AI DnD** — AI-powered Dungeons & Dragons web app
+- **Unseen Servant** — AI-powered Dungeons & Dragons web app
 - **navui** — This portfolio site (a fake retro desktop OS)
 - **Ozkonak Elektrik** — Business website for an electrical company
 - **Zu Craft** — E-commerce storefront for a handcraft shop
