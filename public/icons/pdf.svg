@@ -1,0 +1,6 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="#33ff33" xmlns="http://www.w3.org/2000/svg">
+  <rect x="2" y="1" width="10" height="14" fill="none" stroke="#33ff33" stroke-width="1" />
+  <polygon points="12,1 14,3 12,3" />
+  <rect x="12" y="3" width="2" height="12" fill="none" stroke="#33ff33" stroke-width="1" />
+  <text x="4" y="10" font-size="4" font-family="monospace" fill="#33ff33">PDF</text>
+</svg>
